@@ -7,7 +7,7 @@
     = link_to "Sign up", new_user_registration_path 
     if you are a new user.
   - if user_signed_in?
-    %p= link_to "New Reservation", '#', class: "btn btn-lg btn-primary"
+    %p= link_to "New Reservation", new_reservation_path, class: "btn btn-lg btn-primary"
     %p= link_to "Booking History", '#', class: "btn btn-lg btn-success"
     %p= link_to "Cancel History", '#', class: "btn btn-lg btn-danger"
   - else

@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  devise_for :users
+  root                'static_pages#home'
+  get  'new_reservation'  =>'static_pages#new_reservation'
   get 'users/new'
-  root 'static_pages#home'
+  devise_for :users
   resources :users
 end
