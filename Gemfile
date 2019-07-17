@@ -16,6 +16,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder'
 gem 'devise'
+gem 'activesupport'
 
 group :development, :test do
   gem 'sqlite3'

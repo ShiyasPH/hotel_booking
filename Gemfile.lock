@@ -488,6 +488,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activesupport
   bcrypt
   better_errors
   bootstrap-sass
