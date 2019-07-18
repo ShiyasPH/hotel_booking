@@ -3,5 +3,5 @@ Rails.application.routes.draw do
   get 'users/new'
   devise_for :users
   resources :users
-  resources :bookings,   only: [:new, :create, :index]
+	resources :bookings, only: [:new, :create, :index]
 end
