@@ -1,18 +1,18 @@
-%h2 New Reservation
+%h3 New Reservation
 
-= form_for(@booking) do |f|
+%h4
+  = form_for(@booking) do |f|
 
-  .field
-    = f.label :start
-    %br/
-    = f.date_select :start_date
-  .field
-    = f.label :end
-    %br/
-    = f.date_select :end_date
-  .field
-    = f.label :Guest_name
-    %br/
-    = f.text_field :guest_name
-  .actions
-    = f.submit
+    .form-group
+      = f.label :start
+      %br
+      = f.date_select :start_date, class: "form-control"
+    .form-group
+      = f.label :end
+      %br
+      = f.date_select :end_date, class: "form-control"
+    .form-group
+      = f.label :Guest_name
+      = f.text_field :guest_name, class: "form-control"
+    .form-group
+      = f.submit
