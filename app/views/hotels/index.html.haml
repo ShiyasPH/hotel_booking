@@ -1,0 +1,4 @@
+.container
+  .list-group
+    - @hotel.each do |hotel|
+      %li.list-group-item= link_to(hotel.name, hotel_path(hotel))

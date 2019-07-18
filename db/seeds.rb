@@ -26,7 +26,8 @@ end
 # Hotels
 
 10.times do |n|
-  Hotels.create!(name  = "ABC#{n} hotel")
+  Hotel.create!(name: "ABC#{n+1} hotel")
+  puts 'created'
 end
 
 # Rooms
@@ -53,11 +54,11 @@ end
 10.times do |n1|
   10.times do |n2|
     user_id = (n1-1) * 10 + n2
-    Bookings.create!(user_id:  user_id,
+    Booking.create!(user_id:  user_id,
                      hotel_id:  n1,
                      guest_name:  Faker::Name.name,
-                     start_date:  2019-08-01,
-                     end_date:  2019-08-31)
+                     start_date:  Date.today,
+                     end_date:  Date.today)
   end
 end
 
@@ -68,3 +69,5 @@ end
     booking_id = (n1-1) * 50 + n2
     Bookings_rooms.create!(booking_id:  booking_id,
                            room_id:  n1)
+  end
+end
