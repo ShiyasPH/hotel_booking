@@ -1,4 +1,16 @@
-.container
-  .list-group
-    - @hotel.each do |hotel|
-      %li.list-group-item= link_to(hotel.name, hotel_path(hotel))
+=render partial: "bookings/booking_search", locals: {booking: Booking.new}
+.container-fluid
+  -@hotel.each do |hotel|
+    .row
+      .col-sm-6{:style => "background-color:lavender;"}
+        %h4=hotel.name
+        %p Cost per day for single room: Rs. 1000
+        %p Cost per day for double room: Rs. 2000
+        %p Cost per day for triple room: Rs. 3000
+      .col-sm-6{:style => "background-color:lavenderblush;"}
+        .dropdown
+          %button.dropbtn Select room type for booking
+          .dropdown-content
+            %a{:href => new_booking_path} Single room
+            %a{:href => new_booking_path} Double room
+            %a{:href => new_booking_path} Triple room
