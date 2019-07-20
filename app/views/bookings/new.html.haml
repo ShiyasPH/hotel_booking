@@ -1,0 +1,9 @@
+%h3 New Reservation
+%h4
+  = form_for(@booking) do |f|
+    .form-group
+      = f.label :guest_name
+      = f.text_field :guest_name
+    .form-group
+      = f.submit "Confirm booking"
+

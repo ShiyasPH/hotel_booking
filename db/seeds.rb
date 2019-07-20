@@ -33,15 +33,15 @@ end
 # Rooms
 
 hotels = Hotel.order(:created_at)
-50.times do |n|
-  if n<20
-    room_type = 1
+30.times do |n|
+  if n<10
+    room_type = 'Single room'
     price = 1000
-  elsif n<40
-    room_type = 2
+  elsif n<20
+    room_type = 'Double room'
     price = 2000
   else
-    room_type = 3
+    room_type = 'Triple room'
     price = 3000
   end
   hotels.each { |hotel| hotel.rooms.create!(room_number:  n+1,
@@ -54,19 +54,26 @@ end
 10.times do |n1|
   10.times do |n2|
     user_id = n1*10 + n2 + 1
+    if n2<5
+      room_type = 'Single room'
+    else
+      room_type = 'Double room'
     Booking.create!(user_id:  user_id,
                      hotel_id:  n1+1,
                      guest_name:  Faker::Name.name,
+                     room_type:  room_type,
                      start_date:  Date.today,
                      end_date:  Date.today)
   end
 end
 
+
+
 # Bookings_rooms
 
 10.times do |n1|
   10.times do |n2|
-    booking_id = n1*50 + n2 + 1
+    booking_id = n1*30 + n2 + 1
     BookingsRoom.create!(booking_id:  booking_id,
                            room_id:  n1+1)
   end

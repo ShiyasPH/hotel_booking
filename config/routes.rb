@@ -4,5 +4,5 @@ Rails.application.routes.draw do
   devise_for :users
   resources :users
   resources :hotels
-	resources :bookings, only: [:new, :create, :index]
+	resources :bookings
 end

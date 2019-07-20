@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :logged_in_user, only: [:create]
+  before_action :authenticate_user!, only: [:create, :update, :destroy, :index, :show]
 
   def index
     @booking = current_user.bookings.all
@@ -10,7 +10,13 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @booking = Booking.new(booking_params)
+    @booking = current_user.bookings.build(booking_params)
+    if @booking.save
+      redirect_to '/bookings'
+      flash[:success] = "New Reservation Created!"
+    else
+      redirect_to hotels_path
+    end
   end
 
   private
