@@ -17,6 +17,7 @@ gem 'turbolinks'
 gem 'jbuilder'
 gem 'devise'
 gem 'activesupport'
+gem 'binding_of_caller'
 
 group :development, :test do
   gem 'sqlite3'

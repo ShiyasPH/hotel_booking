@@ -1,5 +1,9 @@
 current directory: /home/lokesh/environment/hotel_booking/vendor/bundle/ruby/2.5.0/gems/nio4r-2.4.0/ext/nio4r
+<<<<<<< HEAD
 /home/lokesh/.rvm/rubies/ruby-2.5.5/bin/ruby -I /home/lokesh/.rvm/rubies/ruby-2.5.5/lib/ruby/site_ruby/2.5.0 -r ./siteconf20190715-4449-1b6yd50.rb extconf.rb
+=======
+/home/lokesh/.rvm/rubies/ruby-2.5.5/bin/ruby -I /home/lokesh/.rvm/rubies/ruby-2.5.5/lib/ruby/site_ruby/2.5.0 -r ./siteconf20190719-22713-xjujas.rb extconf.rb
+>>>>>>> hotel_show
 checking for unistd.h... yes
 checking for sys/select.h... yes
 checking for port_event_t in poll.h... no
@@ -214,4 +218,8 @@ linking shared-object nio4r_ext.so
 
 current directory: /home/lokesh/environment/hotel_booking/vendor/bundle/ruby/2.5.0/gems/nio4r-2.4.0/ext/nio4r
 make "DESTDIR=" install
+<<<<<<< HEAD
 /usr/bin/install -m 0755 nio4r_ext.so ./.gem.20190715-4449-t41qkq
+=======
+/usr/bin/install -m 0755 nio4r_ext.so ./.gem.20190719-22713-k6gh6l
+>>>>>>> hotel_show

@@ -8,4 +8,7 @@
       = f.label :end_date
       = f.date_select :end_date, class: "form-control"
     .form-group
-      = f.submit
+      = f.label :guest_name
+      = f.text_field :guest_name
+    .form-group
+      = f.submit "Search"

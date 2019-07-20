@@ -1,5 +1,9 @@
 current directory: /home/lokesh/environment/hotel_booking/vendor/bundle/ruby/2.5.0/gems/nokogiri-1.10.3/ext/nokogiri
+<<<<<<< HEAD
 /home/lokesh/.rvm/rubies/ruby-2.5.5/bin/ruby -I /home/lokesh/.rvm/rubies/ruby-2.5.5/lib/ruby/site_ruby/2.5.0 -r ./siteconf20190715-4449-1isg0na.rb extconf.rb
+=======
+/home/lokesh/.rvm/rubies/ruby-2.5.5/bin/ruby -I /home/lokesh/.rvm/rubies/ruby-2.5.5/lib/ruby/site_ruby/2.5.0 -r ./siteconf20190719-22713-1nfkfpv.rb extconf.rb
+>>>>>>> hotel_show
 checking if the C compiler accepts ... yes
 Building nokogiri using packaged libraries.
 Using mini_portile version 2.4.0
@@ -142,4 +146,8 @@ rm -rf /home/lokesh/environment/hotel_booking/vendor/bundle/ruby/2.5.0/gems/noko
 
 current directory: /home/lokesh/environment/hotel_booking/vendor/bundle/ruby/2.5.0/gems/nokogiri-1.10.3/ext/nokogiri
 make "DESTDIR=" install
+<<<<<<< HEAD
 /usr/bin/install -m 0755 nokogiri.so ./.gem.20190715-4449-jstofg/nokogiri
+=======
+/usr/bin/install -m 0755 nokogiri.so ./.gem.20190719-22713-12h5o35/nokogiri
+>>>>>>> hotel_show

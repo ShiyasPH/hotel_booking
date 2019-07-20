@@ -1,0 +1,15 @@
+current directory: /home/lokesh/environment/hotel_booking/vendor/bundle/ruby/2.5.0/gems/debug_inspector-0.0.3/ext/debug_inspector
+/home/lokesh/.rvm/rubies/ruby-2.5.5/bin/ruby -I /home/lokesh/.rvm/rubies/ruby-2.5.5/lib/ruby/site_ruby/2.5.0 -r ./siteconf20190720-21720-1qd1huf.rb extconf.rb
+creating Makefile
+
+current directory: /home/lokesh/environment/hotel_booking/vendor/bundle/ruby/2.5.0/gems/debug_inspector-0.0.3/ext/debug_inspector
+make "DESTDIR=" clean
+
+current directory: /home/lokesh/environment/hotel_booking/vendor/bundle/ruby/2.5.0/gems/debug_inspector-0.0.3/ext/debug_inspector
+make "DESTDIR="
+compiling debug_inspector.c
+linking shared-object debug_inspector.so
+
+current directory: /home/lokesh/environment/hotel_booking/vendor/bundle/ruby/2.5.0/gems/debug_inspector-0.0.3/ext/debug_inspector
+make "DESTDIR=" install
+/usr/bin/install -m 0755 debug_inspector.so ./.gem.20190720-21720-zcqvbi
