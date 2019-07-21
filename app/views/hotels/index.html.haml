@@ -1,7 +1,5 @@
-=render partial: "bookings/booking_search", locals: {booking: Booking.new}
-
 .container-fluid
-  -@hotel.each do |hotel|
+  -@availableid.each do |hotel|
     .row
       .col-sm-6{:style => "background-color:lavender;"}
         %h4=hotel.name

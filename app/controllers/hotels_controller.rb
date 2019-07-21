@@ -1,7 +1,9 @@
 class HotelsController < ApplicationController
   def index
     allhotels = Hotel.all
-    @availableid = Set[]
+    @availableid = Set.new
+    current_booking = Booking.last    #error
+    #@cb = current_booking
     allhotels.each do |hotel|
       @count = 10
       type = current_booking.room_type
@@ -13,13 +15,15 @@ class HotelsController < ApplicationController
           hbsd = hb.start_date
           hbed = hb.end_date
           if startdate.between?(hbsd,hbed) || enddate.between?(hbsd,hbed)
-            @count--
+            @count-=1
           end
         end
       end
-      if count > 0
-        @availableid.add(hotel.id)
+      if @count > 0
+        @availableid.add(hotel)
+      end
     end
+    @availableid = @availableid.to_a
   end
 
   def show

@@ -10,18 +10,19 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @booking = current_user.bookings.build(booking_params)
+    @booking = current_user.bookings.create(booking_params)
     if @booking.save
-      redirect_to '/bookings'
-      flash[:success] = "New Reservation Created!"
+      redirect_to "/hotels"
+      flash[:success] = "Choose your hotel"
     else
-      redirect_to hotels_path
+      #render "new"
+      redirect_to "/hotels"
     end
   end
 
   private
-  def booking_params
-    params.require(:booking).permit(:start_date, :end_date, :guest_name)
-  end
 
+    def booking_params
+      params.require(:booking).permit(:start_date, :end_date, :guest_name, :room_type)
+    end
 end

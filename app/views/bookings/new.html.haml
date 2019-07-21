@@ -2,8 +2,20 @@
 %h4
   = form_for(@booking) do |f|
     .form-group
-      = f.label :guest_name
-      = f.text_field :guest_name
+      = f.label :start_date
+      %br/
+      = f.date_select :start_date, class: "form-control"
     .form-group
-      = f.submit "Confirm booking"
-
+      = f.label :end_date
+      %br/
+      = f.date_select :end_date, class: "form-control"
+    .form-group
+      = f.label :room_type
+      %br/
+      = f.select :room_type, options_for_select(["single room", "double room", "triple room"])
+    .form-group
+      = f.label :guest_name
+      %br/
+      = f.text_field :guest_name, class: "form-control"
+    .form-group
+      = f.submit "Confirm details"

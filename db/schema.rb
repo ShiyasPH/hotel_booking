@@ -16,10 +16,11 @@ ActiveRecord::Schema.define(version: 2019_07_18_044048) do
     t.integer "user_id"
     t.integer "hotel_id"
     t.string "guest_name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string "room_type"
     t.date "start_date"
     t.date "end_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["hotel_id"], name: "index_bookings_on_hotel_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
@@ -43,14 +44,13 @@ ActiveRecord::Schema.define(version: 2019_07_18_044048) do
     t.integer "hotel_id"
     t.string "room_number"
     t.integer "price"
-    t.integer "room_type"
+    t.string "room_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["hotel_id"], name: "index_rooms_on_hotel_id"
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "name"
     t.string "email", default: "", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
