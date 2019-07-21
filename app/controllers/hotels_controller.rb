@@ -2,13 +2,13 @@ class HotelsController < ApplicationController
   def index
     allhotels = Hotel.all
     @availableid = Set.new
-    current_booking = Booking.last    #error
+    @current_booking = Booking.last    #error
     #@cb = current_booking
     allhotels.each do |hotel|
       @count = 10
-      type = current_booking.room_type
-      startdate = current_booking.start_date
-      enddate = current_booking.end_date
+      type = @current_booking.room_type
+      startdate = @current_booking.start_date
+      enddate = @current_booking.end_date
       hotelbooking = hotel.bookings.all
       hotelbooking.each do |hb|
         if hb.room_type == type

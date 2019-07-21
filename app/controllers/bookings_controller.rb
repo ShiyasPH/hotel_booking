@@ -10,13 +10,22 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @booking = current_user.bookings.create(booking_params)
+    @booking = current_user.bookings.build(booking_params)
     if @booking.save
-      redirect_to "/hotels"
+      redirect_to hotels_path
       flash[:success] = "Choose your hotel"
     else
-      #render "new"
-      redirect_to "/hotels"
+      render "new"
+    end
+  end
+
+  def show
+    @booking = Booking.find params[:id]
+    allhotels = Hotel.all
+    allhotels.each do |hotel|
+      if hotel.id == @booking.hotel_id
+        @hotel = hotel
+      end
     end
   end
 
