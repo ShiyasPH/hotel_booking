@@ -7,16 +7,41 @@ class BookingsController < ApplicationController
 
   def new
     @booking = Booking.new
+    @hotel = Hotel.find params[:id]
+    @booking.hotel_id = @hotel.id
+    
+=begin
+    @room=hotel.rooms.all
+    @hotelbookings = hotel.bookings.all
+    @hotelbookings.each do |hb|
+      if hb.room_type == @room_type
+        hbsd = hb.start_date
+        hbed = hb.end_date
+        if @start_date.between?(hbsd,hbed) || @end_date.between?(hbsd,hbed)
+          
+        end
+      end
+    end
+=end
   end
 
   def create
     @booking = current_user.bookings.build(booking_params)
     if @booking.save
-      redirect_to hotels_path
-      flash[:success] = "Choose your hotel"
+      flash[:success] = "New Reservation Created!"
+      redirect_to(hotels_path)
     else
-      render "new"
+      render 'new'
     end
+  end
+
+  def edit
+    @booking = Booking.find(params[:id])
+  end
+
+  def update
+    @booking = Booking.find(params[:id])
+    redirect_to @user
   end
 
   def show
@@ -27,6 +52,12 @@ class BookingsController < ApplicationController
         @hotel = hotel
       end
     end
+  end
+
+  def destroy
+    Booking.find(params[:id]).destroy
+    #flash[:success] = "Booking cancelled"
+    #redirect_to users_url
   end
 
   private

@@ -22,6 +22,7 @@ gem 'binding_of_caller'
 group :development, :test do
   gem 'sqlite3'
   gem 'byebug', platform: :mri
+  gem 'annotate'
 end
 
 group :development do

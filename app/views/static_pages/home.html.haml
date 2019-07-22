@@ -2,7 +2,7 @@
   %h1
     Welcome to Hotel Booking App
   - if user_signed_in?
-    %p= link_to "New Reservation", new_booking_path, class: "btn btn-lg btn-primary"
+    %p= link_to "Search for rooms", hotels_path, class: "btn btn-lg btn-primary"
     %p= link_to "Booking History", bookings_path, class: "btn btn-lg btn-success"
     %p= link_to "Cancel Booking", '#', class: "btn btn-lg btn-danger"
   - else

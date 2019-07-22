@@ -1,21 +1,18 @@
 %h3 New Reservation
+
+%h4 Hotel: #{@hotel.name}
+%h4 Room number:
+%h4 Start date:
+%h4 End date:
+%h4 Room type:
+%br/
+%h4 Please enter the guest name and confirm your booking.
+%br/
 %h4
   = form_for(@booking) do |f|
-    .form-group
-      = f.label :start_date
-      %br/
-      = f.date_select :start_date, class: "form-control"
-    .form-group
-      = f.label :end_date
-      %br/
-      = f.date_select :end_date, class: "form-control"
-    .form-group
-      = f.label :room_type
-      %br/
-      = f.select :room_type, options_for_select(["Single room", "Double room", "Triple room"])
     .form-group
       = f.label :guest_name
       %br/
       = f.text_field :guest_name, class: "form-control"
     .form-group
-      = f.submit "Confirm details"
+      = f.submit "Confirm booking"
