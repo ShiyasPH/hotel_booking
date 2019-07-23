@@ -5,24 +5,35 @@ class BookingsController < ApplicationController
     @booking = current_user.bookings.all
   end
 
+
   def new
     @booking = Booking.new
-    @hotel = Hotel.find params[:id]
-    @booking.hotel_id = @hotel.id
-    
-=begin
-    @room=hotel.rooms.all
-    @hotelbookings = hotel.bookings.all
-    @hotelbookings.each do |hb|
-      if hb.room_type == @room_type
-        hbsd = hb.start_date
-        hbed = hb.end_date
-        if @start_date.between?(hbsd,hbed) || @end_date.between?(hbsd,hbed)
-          
+    @hotel = Hotel.find params[:hotel_id]
+    @booking.start_date = params[:start_date]
+    @booking.end_date = params[:end_date]
+    @booking.room_type = params[:room_type]
+
+    @rooms=@hotel.rooms.all
+    @hotelbookings = @hotel.bookings.all
+    @rooms.each do |room|
+      if @booking.room_type == room.room_type
+        flag = true
+        @hotelbookings.each do |hb|
+          br = hb.bookings_room
+          if br.room_id == room.id
+            if @booking.start_date.between?(hb.start_date,hb.end_date) || @booking.end_date.between?(hb.start_date,hb.end_date)
+              flag = false
+              break
+            end
+          end
+        end
+        if flag == true
+          @roomforbooking = room
+          break
         end
       end
     end
-=end
+
   end
 
   def create
@@ -31,26 +42,7 @@ class BookingsController < ApplicationController
       flash[:success] = "New Reservation Created!"
       redirect_to(hotels_path)
     else
-      render 'new'
-    end
-  end
-
-  def edit
-    @booking = Booking.find(params[:id])
-  end
-
-  def update
-    @booking = Booking.find(params[:id])
-    redirect_to @user
-  end
-
-  def show
-    @booking = Booking.find params[:id]
-    allhotels = Hotel.all
-    allhotels.each do |hotel|
-      if hotel.id == @booking.hotel_id
-        @hotel = hotel
-      end
+      redirect_to(new_booking_path)
     end
   end
 
@@ -63,6 +55,6 @@ class BookingsController < ApplicationController
   private
 
     def booking_params
-      params.require(:booking).permit(:start_date, :end_date, :guest_name, :room_type)
+      params.require(:booking).permit(:hotel_id, :start_date, :end_date, :guest_name, :room_type)
     end
 end

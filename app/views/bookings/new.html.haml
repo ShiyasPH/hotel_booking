@@ -1,15 +1,19 @@
 %h3 New Reservation
-
 %h4 Hotel: #{@hotel.name}
-%h4 Room number:
-%h4 Start date:
-%h4 End date:
-%h4 Room type:
+%h4 Room number: #{@roomforbooking.room_number}
+%h4 Start date: #{@booking.start_date}
+%h4 End date: #{@booking.end_date}
+%h4 Room type: #{@booking.room_type}
+%h4 Cost per day: #{@roomforbooking.price}
 %br/
 %h4 Please enter the guest name and confirm your booking.
 %br/
 %h4
   = form_for(@booking) do |f|
+    = f.hidden_field :hotel_id, value: params[:hotel_id]
+    = f.hidden_field :start_date, value: params[:start_date]
+    = f.hidden_field :end_date, value: params[:end_date]
+    = f.hidden_field :room_type, value: params[:room_type]
     .form-group
       = f.label :guest_name
       %br/
