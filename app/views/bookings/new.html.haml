@@ -14,6 +14,7 @@
     = f.hidden_field :start_date, value: params[:start_date]
     = f.hidden_field :end_date, value: params[:end_date]
     = f.hidden_field :room_type, value: params[:room_type]
+    = f.hidden_field :room_id, value:@roomforbooking.id
     .form-group
       = f.label :guest_name
       %br/

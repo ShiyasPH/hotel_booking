@@ -42,52 +42,35 @@ end
       price = 3000
     end
     Room.create!(hotel_id:  hotelcount+1,
-               room_number:  n+1,
-               room_type:  room_type,
-               price:  price)
+                 room_number:  n+1,
+                 room_type:  room_type,
+                 price:  price)
   end
 end
 
-# Bookings and Bookings_rooms
+# Bookings
 
 5.times do |n1|
-  user_id = 20*n1+1
   20.times do |n2|
-    if n2 < 10
-      room_type = "Single room"
-    else
-      room_type = "Double room"
-    end
-    Booking.create!(user_id:  user_id,
-                    hotel_id:  n1+1,
+    Booking.create!(user_id:  20*n1+n2+1,
+                    room_id:  n1*30+n2+1,
                     guest_name:  Faker::Name.name,
-                    room_type:  room_type,
                     start_date:  Date.today,
                     end_date:  Date.today+30)
-    BookingsRoom.create!(booking_id:  user_id,
-                         room_id:  n1*30+n2+1)
-    user_id +=1
   end
 end
 
 5.times do |n1|
-  user_id = 10*n1+1
   10.times do |n2|
     if n2 < 5
-      room_type = "Single room"
       room_id = 150 + n1*30 + n2 + 1
     else
-      room_type = "Double room"
       room_id = 150 + n1*30 + n2 + 6
     end
-    Booking.create!(user_id:  user_id,
-                    hotel_id:  n1+6,
+    Booking.create!(user_id:  10*n1+n2+1,
+                    room_id: room_id,
                     guest_name:  Faker::Name.name,
-                    room_type:  room_type,
                     start_date:  Date.today,
                     end_date:  Date.today+30)
-    BookingsRoom.create!(booking_id:  user_id+100,
-                         room_id: room_id)
-    user_id +=1
   end
 end
