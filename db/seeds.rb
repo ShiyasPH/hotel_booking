@@ -52,8 +52,16 @@ end
 
 5.times do |n1|
   20.times do |n2|
+    if n2 < 10
+      room_type = "Single room"
+      price = 1000
+    else n2 < 20
+      room_type = "Double room"
+      price = 2000
+    end
     Booking.create!(user_id:  20*n1+n2+1,
                     room_id:  n1*30+n2+1,
+                    room_type:  room_type,
                     guest_name:  Faker::Name.name,
                     start_date:  Date.today,
                     end_date:  Date.today+30)
@@ -63,12 +71,15 @@ end
 5.times do |n1|
   10.times do |n2|
     if n2 < 5
+      room_type = "Single room"
       room_id = 150 + n1*30 + n2 + 1
     else
+      room_type = "Double room"
       room_id = 150 + n1*30 + n2 + 6
     end
     Booking.create!(user_id:  10*n1+n2+1,
                     room_id: room_id,
+                    room_type:  room_type,
                     guest_name:  Faker::Name.name,
                     start_date:  Date.today,
                     end_date:  Date.today+30)

@@ -19,8 +19,7 @@ class BookingsController < ApplicationController
       if @booking.room_type == room.room_type
         flag = true
         @hotelbookings.each do |hb|
-          br = hb.bookings_room
-          if br.room_id == room.id
+          if hb.room_id == room.id
             if @booking.start_date.between?(hb.start_date,hb.end_date) || @booking.end_date.between?(hb.start_date,hb.end_date)
               flag = false
               break
