@@ -10,7 +10,6 @@
 %br/
 %h4
   = form_for(@booking) do |f|
-    = f.hidden_field :hotel_id, value: params[:hotel_id]
     = f.hidden_field :start_date, value: params[:start_date]
     = f.hidden_field :end_date, value: params[:end_date]
     = f.hidden_field :room_type, value: params[:room_type]

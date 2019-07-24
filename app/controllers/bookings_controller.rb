@@ -5,7 +5,6 @@ class BookingsController < ApplicationController
     @booking = current_user.bookings.all
   end
 
-
   def new
     @booking = Booking.new
     @hotel = Hotel.find params[:hotel_id]
@@ -54,6 +53,6 @@ class BookingsController < ApplicationController
   private
 
     def booking_params
-      params.require(:booking).permit(:hotel_id, :start_date, :end_date, :guest_name, :room_type)
+      params.require(:booking).permit(:start_date, :end_date, :guest_name, :room_id, :room_type)
     end
 end
