@@ -1,4 +1,7 @@
-%h3 Booking History
+- if @purpose == "history"
+  %h3 Booking History
+- else
+  %h3 Cancel Booking
 
 .container
   -@booking.each do |booking|
@@ -9,18 +12,33 @@
           %h4 Guest name:
           %h4 Start date:
           %br/
+          - if @purpose == "cancel"
+            %p
+              = link_to "Cancel booking", booking, method: :delete, data: { confirm: "You sure?" }, class: "btn btn-lg btn-danger"
         .col-sm-3{:style => "background-color:lavenderblush;"}
           %h4=booking.room.hotel.name
           %h4=booking.guest_name
           %h4=booking.start_date
           %br/
+          - if @purpose == "cancel"
+            %br/
+            %br/
+            %br/
         .col-sm-3{:style => "background-color:lavender;"}
           %h4 Room number:
           %h4 Room type:
           %h4 End date:
           %br/
+          - if @purpose == "cancel"
+            %br/
+            %br/
+            %br/
         .col-sm-3{:style => "background-color:lavenderblush;"}
           %h4=booking.room.room_number
           %h4=booking.room_type
           %h4=booking.end_date
           %br/
+          - if @purpose == "cancel"
+            %br/
+            %br/
+            %br/

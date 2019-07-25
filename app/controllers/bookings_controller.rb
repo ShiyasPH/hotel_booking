@@ -3,6 +3,7 @@ class BookingsController < ApplicationController
 
   def index
     @booking = current_user.bookings.all
+    @purpose = params[:purpose]
   end
 
   def new
@@ -46,6 +47,7 @@ class BookingsController < ApplicationController
 
   def destroy
     Booking.find(params[:id]).destroy
+    redirect_back fallback_location: bookings_path
     #flash[:success] = "Booking cancelled"
     #redirect_to users_url
   end
