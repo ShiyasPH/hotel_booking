@@ -2,20 +2,25 @@
 
 .container
   -@booking.each do |booking|
-    .row
-      .col-sm-3{:style => "background-color:lavender;"}
-        %h4 Guest name:
-        %h4 Room type:
-        %br/
-      .col-sm-3{:style => "background-color:lavenderblush;"}
-        %h4=booking.guest_name
-        %h4=booking.room_type
-        %br/
-      .col-sm-3{:style => "background-color:lavender;"}
-        %h4 Start date:
-        %h4 End date:
-        %br/
-      .col-sm-3{:style => "background-color:lavenderblush;"}
-        %h4=booking.start_date
-        %h4=booking.end_date
-        %br/
+    %ol
+      .row
+        .col-sm-3{:style => "background-color:lavender;"}
+          %h4 Hotel name:
+          %h4 Guest name:
+          %h4 Start date:
+          %br/
+        .col-sm-3{:style => "background-color:lavenderblush;"}
+          %h4=booking.room.hotel.name
+          %h4=booking.guest_name
+          %h4=booking.start_date
+          %br/
+        .col-sm-3{:style => "background-color:lavender;"}
+          %h4 Room number:
+          %h4 Room type:
+          %h4 End date:
+          %br/
+        .col-sm-3{:style => "background-color:lavenderblush;"}
+          %h4=booking.room.room_number
+          %h4=booking.room_type
+          %h4=booking.end_date
+          %br/
