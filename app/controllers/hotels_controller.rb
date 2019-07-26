@@ -5,20 +5,19 @@ class HotelsController < ApplicationController
     @room_type = params[:booking] ? params[:booking][:room_type] : "Single room"
     @start_date = @start_date.to_date
     @end_date = @end_date.to_date
-    #@availablehotels = Hotel.distinct.joins(:bookings).where('bookings.end_date < ? OR bookings.start_date > ?', @start_date, @end_date).where(bookings: {room_type: @room_type})
     allhotels = Hotel.all
     @availablehotels = Array.new
     allhotels.each do |hotel|
-      @count = 0
+      totalroomscount = hotel.rooms.where(room_type: @room_type).count
       hotelbookings = hotel.bookings.all
       hotelbookings.each do |hb|
         if hb.room_type == @room_type
           if @start_date.between?(hb.start_date,hb.end_date) || @end_date.between?(hb.start_date,hb.end_date)
-            @count +=1
+            totalroomscount -=1
           end
         end
       end
-      if @count < 10
+      if totalroomscount > 0
         @availablehotels.push(hotel)
       end
     end
