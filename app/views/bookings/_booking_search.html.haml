@@ -1,12 +1,12 @@
-%h3 Search for hotels
+%h3 <b>Search for hotels<b>
 %h4
   = form_for(booking, url: hotels_path, method: :get,  html: {class: 'form-inline'}) do |f|
     .form-group
-      = f.label :start_date
+      = f.label :check_in
       %br/
       = f.date_field :start_date, class: "form-control", value: @start_date
     .form-group
-      = f.label :end_date
+      = f.label :check_out
       %br/
       = f.date_field :end_date, class: "form-control", value: @end_date
     .form-group

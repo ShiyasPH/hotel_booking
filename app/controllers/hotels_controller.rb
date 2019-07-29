@@ -7,6 +7,7 @@ class HotelsController < ApplicationController
     @end_date = @end_date.to_date
     allhotels = Hotel.all
     @availablehotels = Array.new
+    return flash.now[:alert] = "Invalid date" if @start_date < Date.today || @end_date < @start_date
     allhotels.each do |hotel|
       totalroomscount = hotel.rooms.where(room_type: @room_type).count
       hotelbookings = hotel.bookings.all
