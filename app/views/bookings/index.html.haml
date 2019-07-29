@@ -7,38 +7,22 @@
   -@booking.each do |booking|
     %ol
       .row
-        .col-sm-3{:style => "background-color:lavender;"}
-          %h4 Hotel name:
-          %h4 Guest name:
-          %h4 Start date:
+        .col-sm-6{:style => "background-color:white;"}
+          = image_tag(booking.room.hotel.id.to_s+".jpg", {:style => "width:550px;height:430px"})
+        .col-sm-6{:style => "background-color:lavender;"}
+          %h3=booking.room.hotel.name
+          %h4 Guest name: #{booking.guest_name}
+          %h4 Check-in date: #{booking.start_date}
+          %h4 Check-out date: #{booking.end_date}
+          %h4 Room type: #{booking.room_type}
+          %h4 Room number: #{booking.room.room_number}
+          %h4 Booking date & time: #{booking.created_at}
           %br/
           - if @purpose == "cancel"
-            %p
-              = link_to "Cancel booking", booking, method: :delete, data: { confirm: "You sure?" }, class: "btn btn-lg btn-danger"
-        .col-sm-3{:style => "background-color:lavenderblush;"}
-          %h4=booking.room.hotel.name
-          %h4=booking.guest_name
-          %h4=booking.start_date
-          %br/
-          - if @purpose == "cancel"
+            %h5= link_to "Cancel booking", booking, method: :delete, data: { confirm: "You sure?" }, class: "btn btn-lg btn-danger"
+          - else
             %br/
             %br/
-            %br/
-        .col-sm-3{:style => "background-color:lavender;"}
-          %h4 Room number:
-          %h4 Room type:
-          %h4 End date:
-          %br/
-          - if @purpose == "cancel"
-            %br/
-            %br/
-            %br/
-        .col-sm-3{:style => "background-color:lavenderblush;"}
-          %h4=booking.room.room_number
-          %h4=booking.room_type
-          %h4=booking.end_date
-          %br/
-          - if @purpose == "cancel"
             %br/
             %br/
             %br/

@@ -21,7 +21,7 @@ textarea {
 
 /* typography */
 
-h1, h2, h3, h4 {
+h1, h2, h3, h4, h5, h6 {
   line-height: 1;
 }
 
@@ -59,6 +59,20 @@ h4 {
   margin-bottom: 0px;
   text-align: left;
   font-weight: normal;
+}
+
+/* For hotel search page */
+h5 {
+  font-size: 1.1em;
+  line-height: 1.7em;
+  text-align: center;
+  margin-bottom: 46px;
+}
+
+h6 {
+  font-size: 1.1em;
+  line-height: 1.7em;
+  margin-bottom: 40px;
 }
 
 /* header */

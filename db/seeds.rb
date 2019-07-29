@@ -24,7 +24,9 @@ end
 # Hotels
 
 10.times do |n|
-  Hotel.create!(name: "ABC#{n+1} hotel")
+  description = Faker::Lorem.paragraph_by_chars(110)
+  Hotel.create!(name: "ABC#{n+1} hotel",
+                description: description)
 end
 
 # Rooms

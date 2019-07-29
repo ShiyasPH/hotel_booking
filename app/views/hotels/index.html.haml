@@ -5,11 +5,15 @@
   -@availablehotels.each do |hotel|
     %ol
       .row
-        .col-sm-6{:style => "background-color:lavender;"}
-          %h4=hotel.name
+        .col-sm-4{:style => "background-color:white;"}
+          = image_tag(hotel.id.to_s+".jpg", {:style => "width:350px;height:250px"})
+        .col-sm-4{:style => "background-color:lavender;"}
+          %h3=hotel.name
+          %h6=hotel.description
+        .col-sm-4{:style => "background-color:lavenderblush;"}
           %br/
-          %p= link_to "Book", new_booking_path(hotel_id: hotel.id, start_date: @start_date, end_date: @end_date, room_type: @room_type), class: "btn btn-lg btn-primary"
-        .col-sm-6{:style => "background-color:lavenderblush;"}
           %p Cost per day for single room: Rs. 1000
           %p Cost per day for double room: Rs. 2000
           %p Cost per day for triple room: Rs. 3000
+          %br/
+          %h5= link_to "Choose Hotel", new_booking_path(hotel_id: hotel.id, start_date: @start_date, end_date: @end_date, room_type: @room_type), class: "btn btn-lg btn-primary"

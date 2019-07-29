@@ -1,10 +1,18 @@
 %h3 New Reservation
-%h4 Hotel: #{@hotel.name}
-%h4 Room number: #{@roomforbooking.room_number}
-%h4 Start date: #{@booking.start_date}
-%h4 End date: #{@booking.end_date}
-%h4 Room type: #{@booking.room_type}
-%h4 Cost per day: #{@roomforbooking.price}
+.container-fluid
+  .col-sm-6{:style => "background-color:white;"}
+    = image_tag(@hotel.id.to_s+".jpg", {:style => "width:540px;height:346px"})
+  .col-sm-6{:style => "background-color:pink;"}
+    %h3=@hotel.name
+    %h4 Start date: #{@booking.start_date}
+    %h4 End date: #{@booking.end_date}
+    %h4 Room type: #{@booking.room_type}
+    %h4 Cost per day: #{@roomforbooking.price}
+    %br/
+    %br/
+    %br/
+    %br/
+    %br/
 %br/
 %h4 Please enter the guest name and confirm your booking.
 %br/
