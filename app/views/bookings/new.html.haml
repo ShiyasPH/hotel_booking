@@ -4,8 +4,8 @@
     = image_tag(@hotel.id.to_s+".jpg", {:style => "width:540px;height:346px"})
   .col-sm-6{:style => "background-color:pink;"}
     %h3=@hotel.name
-    %h4 Start date: #{@booking.start_date}
-    %h4 End date: #{@booking.end_date}
+    %h4 Check-in: #{@booking.start_date}
+    %h4 Check-out: #{@booking.end_date}
     %h4 Room type: #{@booking.room_type}
     %h4 Cost per day: #{@roomforbooking.price}
     %br/
