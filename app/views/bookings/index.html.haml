@@ -1,14 +1,15 @@
+!!!
 - if @purpose == "history"
-  %h3 <b> BOOKING HISTORY <b>
+  %h1 Booking History
 - else
-  %h3 <b> CANCEL BOOKING <b>
+  %h1 Cancel Booking
 
 .container
   -@booking.each do |booking|
     %ol
       .row
         .col-sm-6{:style => "background-color:white;"}
-          = image_tag(booking.room.hotel.id.to_s+".jpg", {:style => "width:550px;height:430px"})
+          = image_tag(booking.room.hotel.id.to_s+".jpg", {:style => "width:350px;height:250px"})
         .col-sm-6{:style => "background-color:lavender;"}
           %h3=booking.room.hotel.name
           %h4 Guest name: #{booking.guest_name}

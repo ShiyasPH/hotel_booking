@@ -1,13 +1,13 @@
-.center.jumbotron
-  %h1
-    Welcome to Hotel Booking App
+!!!
+.home_box
+  .welcome Welcome to Hotel Booking App
   - if user_signed_in?
-    %p= link_to "Search for rooms", hotels_path, class: "btn btn-lg btn-primary"
-    %p= link_to "Booking History", bookings_path(purpose: "history"), class: "btn btn-lg btn-success"
-    %p= link_to "Cancel Booking", bookings_path(purpose: "cancel"), class: "btn btn-lg btn-danger"
+    .buttons= link_to "Search for rooms", hotels_path, class: "btn btn-lg btn-primary"
+    .buttons= link_to "Booking History", bookings_path(purpose: "history"), class: "btn btn-lg btn-success"
+    .buttons= link_to "Cancel Booking", bookings_path(purpose: "cancel"), class: "btn btn-lg btn-danger"
   - else
-    %h2 
+    .signin_request
       Kindly #{link_to "login", new_user_session_path} to start booking if you already have an account.
       = link_to "Sign up", new_user_registration_path
       if you are a new user.
-    %p= link_to "Sign in and search for rooms", new_user_session_path, class: "btn btn-lg btn-primary"
+    .buttons= link_to "Sign in and search for rooms", new_user_session_path, class: "btn btn-lg btn-primary"

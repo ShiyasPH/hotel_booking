@@ -12,7 +12,6 @@ class BookingsController < ApplicationController
     @booking.start_date = params[:start_date]
     @booking.end_date = params[:end_date]
     @booking.room_type = params[:room_type]
-
     @rooms=@hotel.rooms.all
     @hotelbookings = @hotel.bookings.all
     @rooms.each do |room|
@@ -32,7 +31,6 @@ class BookingsController < ApplicationController
         end
       end
     end
-
   end
 
   def create
@@ -48,8 +46,6 @@ class BookingsController < ApplicationController
   def destroy
     Booking.find(params[:id]).destroy
     redirect_back fallback_location: bookings_path
-    #flash[:success] = "Booking cancelled"
-    #redirect_to users_url
   end
 
   private

@@ -1,18 +1,19 @@
-%h3 <b>Search for hotels<b>
-%h4
-  = form_for(booking, url: hotels_path, method: :get,  html: {class: 'form-inline'}) do |f|
-    .form-group
-      = f.label :check_in
-      %br/
-      = f.date_field :start_date, class: "form-control", value: @start_date
-    .form-group
-      = f.label :check_out
-      %br/
-      = f.date_field :end_date, class: "form-control", value: @end_date
-    .form-group
-      = f.label :room_type
-      %br/
-      = f.select :room_type, options_for_select(["Single room", "Double room", "Triple room"], selected: @room_type)
-    .form-group
-      %br/
-      = f.submit "Search"
+!!!
+%h1 Search for hotels
+
+= form_for(booking, url: hotels_path, method: :get,  html: {class: 'form-inline'}) do |f|
+  .searchbox.form-group
+    = f.label :check_in
+    %br/
+    = f.date_field :start_date, class: "form-control", value: @start_date
+  .searchbox.form-group
+    = f.label :check_out
+    %br/
+    = f.date_field :end_date, class: "form-control", value: @end_date
+  .searchbox.form-group
+    = f.label :room_type
+    %br/
+    = f.select :room_type, options_for_select(["Single room", "Double room", "Triple room"], selected: @room_type)
+  .searchbox.form-group
+    %br/
+    = f.submit "Search"
