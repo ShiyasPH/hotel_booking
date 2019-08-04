@@ -41,7 +41,7 @@ h1, h2, h3, h4, h5, h6 {
   .signin_request {
     font-size: 1.5em;
     letter-spacing:  0.01em;
-    margin-bottom: 1em;
+    margin-bottom: 1.5em;
   }
   .buttons{
     letter-spacing:  0.05em;
@@ -54,86 +54,75 @@ h1 {
   letter-spacing: 0.05em;
   margin-bottom: 1em;
   text-align: center;
-  // color: #FFCCCC;
   color: #660000;
 }
 
 .searchbox {
-  font-size: 1.5em;
-  letter-spacing: 0.05em;
+  font-size: 2.3rem;
+  letter-spacing: 0.1rem;
   text-align: left;
   font-weight: normal;
   padding-right: 5%;
   padding-left: 5%;
-  color: #660066;
+  color: black;
 }
 
 h2 {
   font-size: 3em;
   letter-spacing: 0px;
   text-align: center;
-  margin-bottom: 70px;
+  margin-bottom: 50px;
   color: #FF9999;
 }
 
 p {
   font-size: 1.2em;
   line-height: 1.7em;
+  letter-spacing: 0.02em;
 }
 
-/* For new reservation page */
-h3 {
-  font-size: 3em;
-  letter-spacing: 0px;
-  text-align: center;
-  margin-bottom: 70px;
-}
-
-h4 {
+.bookingdetails{
   font-size: 1.5em;
-  letter-spacing: 0px;
-  margin-bottom: 0px;
-  text-align: left;
-  font-weight: normal;
-}
-
-/* For hotel search page */
-h5 {
-  font-size: 1.1em;
   line-height: 1.7em;
-  text-align: center;
-  margin-bottom: 46px;
+  letter-spacing: 0.07em;
+  color: #c4dfe6;
 }
 
-h6 {
-  font-size: 1.1em;
-  line-height: 1.7em;
-  margin-bottom: 40px;
-}
-
-table {
+table.table1 {
   border-collapse: collapse;
   text-align: justify;
 }
-
-.rowspacing { 
-  border-collapse:separate; 
-  border-spacing:0 1rem; 
-}
-
-td {
+table.table1 td {
   border: 1px solid #cecfd5;
   padding: 1rem 3rem;
   color: #c4dfe6;
   height: 30rem;
   width: 50rem;
 }
-
-td:first-child{
+table.table1 td:first-child{
   padding: 0;
   width: 40rem;
 }
 
+table.table2{
+  border-collapse: collapse;
+  text-align: justify;
+}
+table.table2 td {
+  border: 1px solid #cecfd5;
+  padding: 1rem 3rem;
+  color: #c4dfe6;
+  height: 45rem;
+  width: 60rem;
+}
+table.table2 td:first-child{
+  padding: 0;
+}
+
+.rowspacing { 
+  border-collapse:separate; 
+  border-spacing:0 1rem; 
+}
 
 /* header */
 
@@ -152,38 +141,3 @@ td:first-child{
     text-decoration: none;
   }
 }
-
-// .dropbtn {
-//   background-color:pink;
-//   color: white;
-//   padding: 16px;
-//   font-size: 16px;
-//   border: none;
-// }
-
-// .dropdown {
-//   position: relative;
-//   //display: inline-block;
-// }
-
-// .dropdown-content {
-//   display: none;
-//   position: absolute;
-//   background-color: #f1f1f1;
-//   min-width: 160px;
-//   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-//   z-index: 1;
-// }
-
-// .dropdown-content a {
-//   color: black;
-//   padding: 12px 16px;
-//   text-decoration: none;
-//   display: block;
-// }
-
-// .dropdown-content a:hover {background-color: #ddd;}
-
-// .dropdown:hover .dropdown-content {display: block;}
-
-// .dropdown:hover .dropbtn {background-color: pink;}

@@ -1,21 +1,25 @@
 !!!
 %h1 New Reservation
-.container-fluid
-  .col-sm-6{:style => "background-color:white;"}
-    = image_tag(@hotel.id.to_s+".jpg", {:style => "width:540px;height:346px"})
-  .col-sm-6{:style => "background-color:pink;"}
-    %h3=@hotel.name
-    %h4 Check-in: #{@booking.start_date}
-    %h4 Check-out: #{@booking.end_date}
-    %h4 Room type: #{@booking.room_type}
-    %h4 Cost per day: #{@roomforbooking.price}
-    %br/
-    %br/
-    %br/
-    %br/
-    %br/
+
+%table.table2
+  %tr
+    %td= image_tag(@hotel.id.to_s+".jpg", {:style => "width:60rem;height:45rem"})
+    %td
+      %h2=@hotel.name
+      %p=@hotel.description
+      %br/
+      %br/
+      .bookingdetails
+        <i>Check-in</i> : <b>#{@booking.start_date}</b>
+        %br/
+        <i>Check-out</i> : <b>#{@booking.end_date}</b>
+        %br/
+        <i>Room type</i> : <b>#{@booking.room_type}</b>
+        %br/
+        <i>Cost per day</i> : <b>#{@roomforbooking.price}</b>
 %br/
-%h4 Please enter the guest name and confirm your booking.
+%br/
+.bookingdetails Please enter the <i><b>Guest name</b></i> and confirm your booking.
 %br/
 %h4
   = form_for(@booking) do |f|
@@ -23,9 +27,9 @@
     = f.hidden_field :end_date, value: params[:end_date]
     = f.hidden_field :room_type, value: params[:room_type]
     = f.hidden_field :room_id, value:@roomforbooking.id
-    .form-group
+    .searchbox.form-group
       = f.label :guest_name
       %br/
-      = f.text_field :guest_name, class: "form-control"
-    .form-group
+      = f.text_field :guest_name
+    .searchbox.form-group
       = f.submit "Confirm booking"

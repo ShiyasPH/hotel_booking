@@ -4,26 +4,25 @@
 - else
   %h1 Cancel Booking
 
-.container
+%table.table2.rowspacing
   -@booking.each do |booking|
-    %ol
-      .row
-        .col-sm-6{:style => "background-color:white;"}
-          = image_tag(booking.room.hotel.id.to_s+".jpg", {:style => "width:350px;height:250px"})
-        .col-sm-6{:style => "background-color:lavender;"}
-          %h3=booking.room.hotel.name
-          %h4 Guest name: #{booking.guest_name}
-          %h4 Check-in date: #{booking.start_date}
-          %h4 Check-out date: #{booking.end_date}
-          %h4 Room type: #{booking.room_type}
-          %h4 Room number: #{booking.room.room_number}
-          %h4 Booking date & time: #{booking.created_at}
+    %tr
+      %td
+        = image_tag(booking.room.hotel.id.to_s+".jpg", {:style => "width:60rem;height:45rem"})
+      %td
+        %h2=booking.room.hotel.name
+        .bookingdetails
+          <i>Guest name</i>: #{booking.guest_name}
+          %br/
+          <i>Check-in date</i>: #{booking.start_date}
+          %br/
+          <i>Check-out date</i>: #{booking.end_date}
+          %br/
+          <i>Room type</i>: #{booking.room_type}
+          %br/
+          <i>Room number</i>: #{booking.room.room_number}
+          %br/
+          <i>Booking date & time</i>: #{booking.created_at}
           %br/
           - if @purpose == "cancel"
-            %h5= link_to "Cancel booking", booking, method: :delete, data: { confirm: "You sure?" }, class: "btn btn-lg btn-danger"
-          - else
-            %br/
-            %br/
-            %br/
-            %br/
-            %br/
+            %p.center= link_to "Cancel booking", booking, method: :delete, data: { confirm: "You sure?" }, class: "btn btn-lg btn-danger"

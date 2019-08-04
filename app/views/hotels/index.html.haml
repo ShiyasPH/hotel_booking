@@ -2,8 +2,7 @@
 =render partial: "bookings/booking_search",locals: {booking: Booking.new}
 %br/
 %br/
-
-%table.rowspacing
+%table.table1.rowspacing
   -@availablehotels.each do |hotel|
     %tr
       %td= image_tag(hotel.id.to_s+".jpg", {:style => "width:40rem;height:30rem"})
@@ -11,8 +10,11 @@
         %h2=hotel.name
         %p=hotel.description
       %td
+        %br/
+        %br/
+        %br/
         %p Cost per day for single room: Rs. 1000
         %p Cost per day for double room: Rs. 2000
         %p Cost per day for triple room: Rs. 3000
         %br/
-        %h5= link_to "Choose Hotel", new_booking_path(hotel_id: hotel.id, start_date: @start_date, end_date: @end_date, room_type: @room_type), class: "btn btn-lg btn-primary"
+        %p.center= link_to "Choose Hotel", new_booking_path(hotel_id: hotel.id, start_date: @start_date, end_date: @end_date, room_type: @room_type), class: "btn btn-lg btn-primary"
