@@ -4,7 +4,7 @@
 - else
   %h1 Cancel Booking
 
-%table.table2.rowspacing
+%table.table2
   -@booking.each do |booking|
     %tr
       %td
@@ -12,17 +12,17 @@
       %td
         %h2=booking.room.hotel.name
         .bookingdetails
-          <i>Guest name</i>: #{booking.guest_name}
+          <i>Guest name</i>: <b>#{booking.guest_name}</b>
           %br/
-          <i>Check-in date</i>: #{booking.start_date}
+          <i>Check-in date</i>: <b>#{booking.start_date}</b>
           %br/
-          <i>Check-out date</i>: #{booking.end_date}
+          <i>Check-out date</i>: <b>#{booking.end_date}</b>
           %br/
-          <i>Room type</i>: #{booking.room_type}
+          <i>Room type</i>: <b>#{booking.room_type}</b>
           %br/
-          <i>Room number</i>: #{booking.room.room_number}
+          <i>Room number</i>: <b>#{booking.room.room_number}</b>
           %br/
-          <i>Booking date & time</i>: #{booking.created_at}
+          <i>Booking date & time</i>: <b>#{booking.created_at}</b>
           %br/
           - if @purpose == "cancel"
             %p.center= link_to "Cancel booking", booking, method: :delete, data: { confirm: "You sure?" }, class: "btn btn-lg btn-danger"

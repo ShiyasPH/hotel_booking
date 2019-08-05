@@ -1,6 +1,5 @@
 !!!
 %h1 Search for hotels
-
 = form_for(booking, url: hotels_path, method: :get,  html: {class: 'form-inline'}) do |f|
   .searchbox.form-group
     = f.label :check_in
@@ -13,7 +12,7 @@
   .searchbox.form-group
     = f.label :room_type
     %br/
-    = f.select :room_type, options_for_select(["Single room", "Double room", "Triple room"], selected: @room_type)
+    = f.select :room_type, options_for_select(["Single room", "Double room", "Triple room"], selected: @room_type), {}, {id: 'room-type-field'}
   .searchbox.form-group
     %br/
-    = f.submit "Search"
+    = f.submit "Search", class: "submitbox"

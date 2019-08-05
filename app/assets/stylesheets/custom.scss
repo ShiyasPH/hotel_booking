@@ -23,10 +23,6 @@ textarea {
 
 /* typography */
 
-h1, h2, h3, h4, h5, h6 {
-  line-height: 1;
-}
-
 .home_box{
   background: #003B46;
   text-align: center;
@@ -49,6 +45,42 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+.signin{
+  font-size: 2rem;
+  line-height: 3.5rem;
+  letter-spacing: 0.2rem;
+  color: black;
+}
+
+.signinlinks{
+  font-size: 2rem;
+  line-height: 3.5rem;
+  letter-spacing: 0.1rem;
+  color: blue;
+  &:hover {
+    color: blue;
+    text-decoration: underline;
+  }
+}
+
+.form-control{
+  background: #003B46;
+  color: #c4dfe6;
+  font-size: 2rem;
+  padding: 2rem;
+}
+
+.submitbox{
+  background: #003B46;
+  color: #c4dfe6;
+  border-radius: 1rem;
+  border: 0.05rem solid #648880;
+  padding: 0.5rem 1rem;
+  &:hover {
+    border: blue;
+  }
+}
+
 h1 {
   font-size: 3.5em;
   letter-spacing: 0.05em;
@@ -62,8 +94,8 @@ h1 {
   letter-spacing: 0.1rem;
   text-align: left;
   font-weight: normal;
-  padding-right: 5%;
-  padding-left: 5%;
+  padding-right: 4%;
+  padding-left: 4%;
   color: black;
 }
 
@@ -84,44 +116,49 @@ p {
 .bookingdetails{
   font-size: 1.5em;
   line-height: 1.7em;
-  letter-spacing: 0.07em;
+  letter-spacing: 0.1em;
   color: #c4dfe6;
 }
 
 table.table1 {
-  border-collapse: collapse;
+  border-collapse:separate; 
+  border-spacing:0 1rem;
   text-align: justify;
-}
-table.table1 td {
-  border: 1px solid #cecfd5;
-  padding: 1rem 3rem;
-  color: #c4dfe6;
-  height: 30rem;
-  width: 50rem;
-}
-table.table1 td:first-child{
-  padding: 0;
-  width: 40rem;
+  td{
+    border: 1px solid #cecfd5;
+    padding: 1rem 3rem;
+    color: #c4dfe6;
+    height: 30rem;
+    width: 50rem;
+    &:first-child{
+      padding: 0;
+      width: 40rem;
+    }
+  }
 }
 
 table.table2{
-  border-collapse: collapse;
+  border-collapse:separate; 
+  border-spacing:0 2rem;
   text-align: justify;
-}
-table.table2 td {
-  border: 1px solid #cecfd5;
-  padding: 1rem 3rem;
-  color: #c4dfe6;
-  height: 45rem;
-  width: 60rem;
-}
-table.table2 td:first-child{
-  padding: 0;
+  td {
+    border: 1px solid #cecfd5;
+    padding: 1rem 3rem;
+    color: #c4dfe6;
+    height: 45rem;
+    width: 60rem;
+    &:first-child{
+      padding: 0;
+    }
+  }
 }
 
-.rowspacing { 
-  border-collapse:separate; 
-  border-spacing:0 1rem; 
+#room-type-field {
+  background: #003B46;
+  color: #c4dfe6;
+  border-radius: 1rem;
+  border: 0.05rem solid #cecfd5;
+  padding: 0.5rem 1rem;
 }
 
 /* header */
@@ -136,7 +173,6 @@ table.table2 td:first-child{
   padding-top: 9px;
   font-weight: bold;
   &:hover {
-    // color:lightgreen;
     color:#648880;
     text-decoration: none;
   }

@@ -2,7 +2,7 @@
 =render partial: "bookings/booking_search",locals: {booking: Booking.new}
 %br/
 %br/
-%table.table1.rowspacing
+%table.table1
   -@availablehotels.each do |hotel|
     %tr
       %td= image_tag(hotel.id.to_s+".jpg", {:style => "width:40rem;height:30rem"})
