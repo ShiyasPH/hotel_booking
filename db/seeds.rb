@@ -13,7 +13,6 @@ User.create!(email:  "ce14b068@smail.iitm.ac.in",
              password_confirmation:  "shiyas")
 
 99.times do |n|
-  name  = Faker::Name.name
   email = "example-#{n+1}@gmail.com"
   password = "password"
   User.create!(email:  email,
@@ -24,7 +23,7 @@ end
 # Hotels
 
 10.times do |n|
-  description = Faker::Lorem.paragraph_by_chars(110)
+  description = Faker::Lorem.paragraph_by_chars(number: 110)
   Hotel.create!(name: "ABC#{n+1} hotel",
                 description: description)
 end
