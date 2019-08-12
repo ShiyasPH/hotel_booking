@@ -12,23 +12,12 @@ class BookingsController < ApplicationController
     @booking.start_date = params[:start_date]
     @booking.end_date = params[:end_date]
     @booking.room_type = params[:room_type]
-    @rooms=@hotel.rooms.all
-    @hotelbookings = @hotel.bookings.all
-    @rooms.each do |room|
-      if @booking.room_type == room.room_type
-        flag = true
-        @hotelbookings.each do |hb|
-          if hb.room_id == room.id
-            if @booking.start_date.between?(hb.start_date,hb.end_date) || @booking.end_date.between?(hb.start_date,hb.end_date)
-              flag = false
-              break
-            end
-          end
-        end
-        if flag == true
-          @roomforbooking = room
-          break
-        end
+    # Searching availability of rooms
+    rooms = @hotel.rooms.where(room_type: @booking.room_type)
+    rooms.each do |room|
+      if room.bookings.where.not('bookings.end_date<? OR bookings.start_date>?', @booking.start_date, @booking. end_date).count == 0
+        @roomforbooking = room
+        break
       end
     end
   end

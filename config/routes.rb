@@ -1,9 +1,6 @@
 Rails.application.routes.draw do
-  root                'static_pages#home'
-  get 'users/new'
+  root  'static_pages#home'
   devise_for :users
-  resources :users
-  resources :hotels
-  resources :bookings
-  resources :bookings_rooms
+  resources :hotels, only: [:index]
+  resources :bookings, only: [:new, :create, :index, :destroy]
 end
